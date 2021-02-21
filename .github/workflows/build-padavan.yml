@@ -62,6 +62,26 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ALIDDNS/d' .config #删除配置项阿里DDNS
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMARTDNS/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SRELAY/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_UVC=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_ENABLE_FUSE=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_AUDIO=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_IPSET=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_LPRD=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_U2EC=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_TCPDUMP=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_HDPARM=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_PARTED=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD36=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_FTPD=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_XUPNPD=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_DOGCOM=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_MINIEAP=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_NJIT_CLIENT=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_NAPT66=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_LRZSZ=y/d' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
         ######################################################################
         #以下选项是定义你需要的功能（y=集成,n=忽略），重新写入到.config文件
@@ -71,12 +91,12 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=n" >> .config #SS plus+
         echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >> .config # simple-obfs混淆插件
         echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=n" >> .config #SS server
-        echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> .config #DNSFORWARDER
+        echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=y" >> .config #DNSFORWARDER
         echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=n" >> .config #adbyby plus+
         echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config #内网穿透FRPC
-        echo "CONFIG_FIRMWARE_INCLUDE_FRPS=n" >> .config #内网穿透FRPS
+        echo "CONFIG_FIRMWARE_INCLUDE_FRPS=y" >> .config #内网穿透FRPS
         echo "CONFIG_FIRMWARE_INCLUDE_TUNSAFE=n" >> .config #TUNSAFE
-        echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> .config #阿里DDNS
+        echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config #阿里DDNS
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n" >> .config #smartdns
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN=n" >> .config #smartdns二进制文件
         echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config #集成v2ray执行文件（3.8M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
